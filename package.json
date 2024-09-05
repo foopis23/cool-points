@@ -1,0 +1,14 @@
+{
+  "name": "cool-points",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {},
+  "type": "module",
+  "dependencies": {
+    "ts-datapacks": "https://github.com/foopis23/ts-datapacks"
+  }
+}
