@@ -6,7 +6,9 @@
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsmc build"
+  },
   "type": "module",
   "dependencies": {
     "ts-datapacks": "https://github.com/foopis23/ts-datapacks"

@@ -3,6 +3,7 @@ import { BLOCK_IDS } from "./blocks";
 
 export default packConfig({
   namespace: "cool_points",
+  outDir: "cool_points",
   functions: [
     functionConfig({
       name: "setup",
@@ -14,16 +15,12 @@ export default packConfig({
     functionConfig({
       name: "update_objective",
       command: command`
-        execute store result score @n[tag=cool_points_data] current_objective run random value 0 ${
-          BLOCK_IDS.length
-        }
+        execute store result score @n[tag=cool_points_data] current_objective run random value 0..${BLOCK_IDS.length}
         scoreboard objectives remove cool_points
-      
+
         ${BLOCK_IDS.map(
           (blockId, index) =>
-            command`execute if score @n[tag=cool_points_data] current_objective matches ${
-              index + 1
-            } run scoreboard objectives add cool_points mined:${blockId}`
+            command`execute if score @n[tag=cool_points_data] current_objective matches ${index + 1} run scoreboard objectives add cool_points mined:${blockId}`
         )}
       `,
     }),
